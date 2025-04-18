@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lunch Menu Picker</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #fff8f0;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #ff704d;
+    }
+
+    #menu {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      background-color: #ff704d;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff5733;
+    }
+  </style>
+</head>
+<body>
+  <h1>🍽️ What Should I Eat Today?</h1>
+  <p id="menu">Click the button to get a lunch idea!</p>
+  <button onclick="recommendMenu()">Pick a Menu</button>
+
+  <!-- Link back to scratch page -->
+  <p><a href="scratch.html">← Back to Scratch Page</a></p>
+
+  <script>
+    const menus = [
+      { name: "Kimchi Roll (김밥) 🍣" },
+      { name: "Sushi 🍣" },
+      { name: "Burger 🍔" },
+      { name: "Sandwich 🥪" },
+      { name: "Salad 🥗" },
+      { name: "Pizza 🍕" },
+      { name: "Chicken Tenders 🍗" },
+      { name: "Taco 🌮" }
+    ];
+
+    function recommendMenu() {
+      const random = Math.floor(Math.random() * menus.length);
+      const menu = menus[random];
+      document.getElementById("menu").innerText = `How about... ${menu.name}?`;
+    }
+  </script>
+</body>
+</html>
